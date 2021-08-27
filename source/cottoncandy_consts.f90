@@ -1,0 +1,1 @@
+Real, public :: Planck = 6.62607015e-36! Planck const
