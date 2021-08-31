@@ -1,13 +1,7 @@
-program main
+program example_02
     use CottonCandy
 
-    Open(19, FILE="test.dat", status="NEW")
-    call Integral(f1, 19)
-    close(19)
-
-    Open(19, FILE="test2.dat", status="NEW")
-    call Integral(f2, 19)
-    close(19)
+    Write(*, *) Integral_func(f1, 100, 10)
 
     contains
 
@@ -20,4 +14,4 @@ program main
         Real :: x, y;
         y = x
     end function f2
-end program main
+end program example_02
