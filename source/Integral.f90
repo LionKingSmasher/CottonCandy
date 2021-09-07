@@ -14,15 +14,15 @@ subroutine Integral(f, code, accuracy, range)
     enddo
 end subroutine Integral
 
-function Integral_func(f, accuracy, range) result(y)
+function Integral_func(f, start, end, accuracy) result(y)
     procedure(Real) :: f
-    Integer :: accuracy, range
+    Integer :: accuracy, end, start
 
     Real :: x, y
     x = 0 ! Initialized x
     y = 0 ! Initialized y
 
-    do I=1, accuracy*range
+    do I=start*accuracy, accuracy*end
         x = Real(I) / accuracy
         y = f(x) /accuracy + y
     enddo

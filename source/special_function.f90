@@ -30,6 +30,17 @@ function Lambert_W(x, accuracy) result(y)
     end if
 end function Lambert_W
 
+function Log_Integral(x) result(y)
+    Integer :: x
+    Real :: y
+    y = Integral_func(f, 2, x, 10000)
+contains
+    function f(x) result(y)
+        Real :: x, y
+        y = 1/log(x)
+    end function f
+end function Log_Integral
+
 ! subroutine Lambert_W_test(x, accuracy)
 !     Integer :: count, I
 !     Integer :: x, accuracy
