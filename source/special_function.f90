@@ -5,8 +5,8 @@ end function sinc
 
 function Lambert_W(x, accuracy) result(y)
     Integer :: count, I, M
-    Integer :: x, accuracy
-    Real :: y, STR, W
+    Integer :: accuracy
+    Real :: x, y, STR, W
 
     W = 0
     y = 0
@@ -40,6 +40,24 @@ contains
         y = 1/log(x)
     end function f
 end function Log_Integral
+
+function Bump_function(x) result(y)
+    Real :: x, y
+    if (abs(x) < 1) then
+        y = exp(-1/(1-(x**2)))
+    else
+        y = 0
+    end if
+end function Bump_function
+
+function Dirac_Delta(n, x) result(y)
+    Real :: x, y, n
+    if (abs(x) > 1/(2*x)) then
+        y = 0
+    else
+        y = n 
+    end if
+end function Dirac_Delta
 
 ! subroutine Lambert_W_test(x, accuracy)
 !     Integer :: count, I
