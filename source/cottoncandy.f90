@@ -3,4 +3,5 @@ module CottonCandy
     contains
     include "Integral.f90"
     include "special_function.f90"
+    include "cottoncandy_ode.f90"
 end module CottonCandy
