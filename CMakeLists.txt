@@ -10,4 +10,5 @@ enable_language(Fortran)
 
 add_library(cottoncandy STATIC
     source/cottoncandy.f90
+    source/cottoncandy_matrix.f90
 )
